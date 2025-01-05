@@ -113,8 +113,10 @@ It is a piece of code that we can use over and over again. It is little bit like
 ```javascript
 // defining the function
 function logger() {
+// function body
   console.log("My name is Priyavrat");
 }
-// calling / invoking
+// calling / invoking / running the function
 logger();
 ```
+
