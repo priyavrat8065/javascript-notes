@@ -256,7 +256,7 @@ This points to the Environment records that store the bindings for the variable 
 
 So when it parse the code it encounters the variable `firstName` which is declared with the const keyword so it uses the Lexical Environment of the Execution Context and this in turns points to _Global Environment Record_ and this again uses the _declarative record_ to handle the identifier bindings created using the const keywords. Variables declared using const or let are un-initialized and memory is set up, they are hoisted but they don't have a value yet. They are only initialized during the Execution Phase of the Execution Context. Same happens in the case of variable `lastName`
 
-Now we comes to the line where function greet() is declared. Function declarations are managed by the _ObjectRecord_ and in contrast to the two previous variables, functions are initialiezed during the Creation Phase, so a new _Function Object_ is created for the function greet. It contains many properties two of which are the **Environment** which points to the Environment Record in which the function was declared so in this case it is the _Global Environment Record_ and second is **Call** which is a method and is called whenever we invoke the function.
+Now we comes to the line where function greet() is declared. Function declarations are managed by the _ObjectRecord_ and in contrast to the two previous variables, functions are initialiezed during the Creation Phase, so a new _Function Object_ is created for the function greet. It contains many properties, two of which are the **Environment** which points to the Environment Record in which the function was declared so in this case it is the _Global Environment Record_ and second is **Call** which is a method and is called whenever we invoke the function.
 
 ## Execution Phase
 
@@ -290,8 +290,6 @@ So function execution context is added to the call stack. So in the first line o
 
 ### Side note
 
-Variable declared using the  `var` keyword are initialized with the *undefined* during the Creation Phase. That variable resides inside the Global Object if it is declared in the global scope as oppose to Variable declared using let and const keyword which resides inside the *Declarative Record* of the Global Environment Record.
+Variable declared using the `var` keyword are initialized with the _undefined_ during the Creation Phase. That variable resides inside the Global Object if it is declared in the global scope as oppose to Variable declared using let and const keyword which resides inside the _Declarative Record_ of the Global Environment Record.
 
-The scope chain refers to mechanism made available thorugh the *Outer Env* property of the *Environament Record* so whevever we try to access a property that is not inside the current context environament record the engine will traverse the chain of environments of the scope chain until it finds the binding.
-
-
+The scope chain refers to mechanism made available thorugh the _Outer Env_ property of the _Environament Record_ so whevever we try to access a property that is not inside the current context environament record the engine will traverse the chain of environments of the scope chain until it finds the binding.
