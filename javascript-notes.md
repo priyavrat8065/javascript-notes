@@ -240,9 +240,9 @@ It stores all identfiers bindings that aren't variable with `var` keyword or fun
 
 It also contains the this keyword which in the case of global environment record, it points to the global object.
 
-#### Outer Environment
+#### Outer Environment Property
 
-In the case of global Environment it is null.
+It is a property of the Fuction/Global Environment record. In the case of global Environment it is null but in other cases it points to the Environament Record it is created in.
 
 ## Lexical Environment
 
