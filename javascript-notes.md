@@ -304,7 +304,11 @@ So next is the declaration of the new variable `fullName` using the _const_ keyw
 
 ## Execution Phase for the Function Execution Context
 
-So function execution context is added to the call stack. So in the first line of the greet function, we have the `fullName` variable. This variable uses both the `greetToName` parameter variable and also the `lastName` variable but _Function Environment Record_ itself doesn't have binding for the `lastName` variable so instead it uses the _Outer Env_ property of the _Function Environment Record_ to search through the chain of Environments (scope chain) to see if the outer environment does have the binding for this variable. So in this case global Environment Record does have the binding for the `lastName` variable so now `fullName` is now initialized with 'Lydia Hallie'. Then the function returns the 'hello Lydia Hallie' as then the Function Execution Context is popped out of the call stack.
+So function execution context is added to the call stack. So in the first line of the greet function, we have the `fullName` variable. This variable uses both the `greetToName` parameter variable and also the `lastName` variable but _Function Environment Record_ itself doesn't have binding for the `lastName` variable so instead it uses the _Outer Env_ property of the _Function Environment Record_ to search through the chain of Environments (scope chain) to see if the outer environment does have the binding for this variable (see **figure 9**).
+
+![OutEnv search for lastName binding in the scope chain](./outenv.png)*Figure 9*
+
+So in this case global Environment Record does have the binding for the `lastName` variable so now `fullName` is now initialized with 'Lydia Hallie'. Then the function returns the 'hello Lydia Hallie' as then the Function Execution Context is popped out of the call stack.
 
 ### Side note
 
