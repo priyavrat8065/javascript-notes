@@ -218,7 +218,9 @@ function greet(nameToGreet) {
 greet(firstName);
 ```
 
-First when the script is loaded, the global execution context is created. Every execution context goes through 2 phases - Creation Phase and Execution Phase. In the creation phase, memory space is created for the variable declarations and the function declarations along within that context. Then we have the execution Phase, in which the execution context is on the call stack and the code is actually executed.
+First when the script is loaded, the global execution context is created. You can see the _Global Execution Context_ in the **figure 3**. Every Execution Context goes through 2 phases - Creation Phase and Execution Phase. In the creation phase, memory space is created for the variable declarations and the function declarations along within that context. Then we have the execution Phase, in which the execution context is on the call stack and the code is actually executed.
+
+![Global Execution Context](./global-execution-context.png)_Figure 3_
 
 An Execution Context has many components but for now i just want to focus on the realm, lexical Environment and the Variable Environment.
 
