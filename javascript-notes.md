@@ -308,7 +308,10 @@ So function execution context is added to the call stack. So in the first line o
 
 ![OutEnv search for lastName binding in the scope chain](./outenv.png)_Figure 9_
 
-So in this case global Environment Record does have the binding for the `lastName` variable so now `fullName` is now initialized with 'Lydia Hallie'. Then the function returns the 'hello Lydia Hallie' as then the Function Execution Context is popped out of the call stack.
+So in this case global Environment Record does have the binding for the `lastName` variable so now `fullName` is now initialized with 'Lydia Hallie' (see the **figure 10**). Then the function returns the 'hello Lydia Hallie' as then the Function Execution Context is popped out of the call stack.
+
+![Fuction Execution Context](./Fuction-execution-context-completes.png)
+_Figure 10_
 
 ### Side note
 
