@@ -200,7 +200,7 @@ And operator work the opposite way as the OR operator work. In And operator, as 
 
 ## Execution Context
 
-Execution context defines the Environment in which our code is executed. It contains many internal components that our engine uses to keep track of execution flow off that piece of code. Execution context uses Environment Record to keep track and maintain the identifier bindings that have been created for the variable declarations and function declaration or for alll the values within that context.
+Execution context defines the Environment in which our code is executed. It contains many internal components that our engine uses to keep track of execution flow off that piece of code. Execution context uses Environment Record to keep track and maintain the identifier bindings that have been created for the variable declarations and function declaration or for all the values within that context.
 
 ```javascript
 const firstName = "Lydia";
@@ -226,7 +226,7 @@ Global Objects which contains several types of properties - **Spec Properties**,
 
 ### Environment Record
 
-Global Environment Record manages the identifier bindings within that context and in the case of Global Environment Record these values are accesseble throughtout the entire script.
+Global Environment Record manages the identifier bindings within that context and in the case of Global Environment Record these values are accessible throughout the entire script.
 
 #### Object Record
 
@@ -234,7 +234,7 @@ It also has ObjectRecord which points to the Global Object in case of Global Exe
 
 #### Declarative Record
 
-It stores all identfiers bindings that aren't variable with `var` keyword or functions declarations, so everything except for those two.
+It stores all identifiers bindings that aren't variable with `var` keyword or functions declarations, so everything except for those two.
 
 #### Global this keyword
 
@@ -242,7 +242,7 @@ It also contains the this keyword which in the case of global environment record
 
 #### Outer Environment Property
 
-It is a property of the Fuction/Global Environment record. In the case of global Environment it is null but in other cases it points to the Environament Record it is created in.
+It is a property of the Function/Global Environment record. In the case of global Environment it is null but in other cases it points to the Environment Record it is created in.
 
 ## Lexical Environment
 
@@ -266,30 +266,30 @@ Then we come to the greet() function and it already initialized in the memory so
 
 ## Creation Phase of the Function Execution Context
 
-In this case the Lexical Environment contains the brand new _Function Environament Record_.
+In this case the Lexical Environment contains the brand new _Function Environment Record_.
 
 ## Lexical Environment for the Function Execution Context
 
 It contains the Function Environment record.
 
-### Function Environament Record
+### Function Environment Record
 
-It manages all the bindings for the parameters, variables declarations and the function declarations within this function. It also has an Outer Environment porperty.
+It manages all the bindings for the parameters, variables declarations and the function declarations within this function. It also has an Outer Environment property.
 
 #### Outer Environment for the function Environment Record
 
 It points to the environment of the function object which in this case is the Global Environment Record.
 
-Unlike the Global Execution Context we have to deal with the function parameters. In our code the parameter is `nameToGreet` which is immediately initialized unlike the variables declared using _let_ or _const_ keywords. so the parameter is initialezed with `Lydia` in this case.
+Unlike the Global Execution Context we have to deal with the function parameters. In our code the parameter is `nameToGreet` which is immediately initialized unlike the variables declared using _let_ or _const_ keywords. so the parameter is initialized with `Lydia` in this case.
 
-So next is the declaration of the new variable `fullNmae` using the _const_ keyword. so it is added to the **Fuction Environment Record** but un-initialized.
+So next is the declaration of the new variable `fullName` using the _const_ keyword. so it is added to the **Function Environment Record** but un-initialized.
 
 ## Execution Phase for the Function Execution Context
 
-So function execution context is added to the call stack. So in the first line of the greet function, we have the `fullName` variable. This variable uses both the `greetToName` parameter variable and also the `lastName` variable but _Fucntion Environment Record_ itself doesn't have binding for the `lastName` variable so instead it uses the _Outer Env_ property of the _Function Environment Record_ to search through the chain of Environments (scope chain) to see if the outer environment does have the binding for this variable. So in this case glabal Environment Record does have the binding for the `lastName` variable so now `fullName` is now initialized with 'Lydia Hallie'. Then the function returns the 'hello Lydia Hallie' as then the Function Execution Context is poped out of the call stack.
+So function execution context is added to the call stack. So in the first line of the greet function, we have the `fullName` variable. This variable uses both the `greetToName` parameter variable and also the `lastName` variable but _Function Environment Record_ itself doesn't have binding for the `lastName` variable so instead it uses the _Outer Env_ property of the _Function Environment Record_ to search through the chain of Environments (scope chain) to see if the outer environment does have the binding for this variable. So in this case global Environment Record does have the binding for the `lastName` variable so now `fullName` is now initialized with 'Lydia Hallie'. Then the function returns the 'hello Lydia Hallie' as then the Function Execution Context is popped out of the call stack.
 
 ### Side note
 
 Variable declared using the `var` keyword are initialized with the _undefined_ during the Creation Phase. That variable resides inside the Global Object if it is declared in the global scope as oppose to Variable declared using let and const keyword which resides inside the _Declarative Record_ of the Global Environment Record.
 
-The scope chain refers to mechanism made available thorugh the _Outer Env_ property of the _Environament Record_ so whevever we try to access a property that is not inside the current context environament record the engine will traverse the chain of environments of the scope chain until it finds the binding.
+The scope chain refers to mechanism made available through the _Outer Env_ property of the Environment Record_ so whenever we try to access a property that is not inside the current context environment record the engine will traverse the chain of environments of the scope chain until it finds the binding.
