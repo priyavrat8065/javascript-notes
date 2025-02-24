@@ -294,7 +294,9 @@ It manages all the bindings for the parameters, variables declarations and the f
 
 #### Outer Environment for the function Environment Record
 
-It points to the environment of the function object which in this case is the Global Environment Record.
+It points to the _Environment_ of the _Function Object_ which is containing the _Global Environment Record_. See the **figure 8**.
+
+![OutEnv points to the Global Environment Record](./function-execution-context.png)
 
 Unlike the Global Execution Context we have to deal with the function parameters. In our code the parameter is `nameToGreet` which is immediately initialized unlike the variables declared using _let_ or _const_ keywords. so the parameter is initialized with `Lydia` in this case.
 
