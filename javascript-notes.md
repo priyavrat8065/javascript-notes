@@ -200,7 +200,12 @@ And operator work the opposite way as the OR operator work. In And operator, as 
 
 ## Execution Context
 
-Execution context defines the Environment in which our code is executed. It contains many internal components that our engine uses to keep track of execution flow off that piece of code. Execution context uses Environment Record to keep track and maintain the identifier bindings that have been created for the variable declarations and function declaration or for all the values within that context.
+Execution context defines the Environment in which our code is executed. It contains many internal components that our engine uses to keep track of execution flow off that piece of code. See the **figure 1**
+
+![All the components inside the execution context](./internal-components-execution-context.png)*Figure 1*
+
+
+Execution context uses Environment Record to keep track and maintain the identifier bindings that have been created for the variable declarations and function declaration or for all the values within that context.
 
 ```javascript
 const firstName = "Lydia";
