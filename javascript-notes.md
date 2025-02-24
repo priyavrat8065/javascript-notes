@@ -202,10 +202,11 @@ And operator work the opposite way as the OR operator work. In And operator, as 
 
 Execution context defines the Environment in which our code is executed. It contains many internal components that our engine uses to keep track of execution flow off that piece of code. See the **figure 1**
 
-![All the components inside the execution context](./internal-components-execution-context.png)*Figure 1*
+![All the components inside the execution context](./internal-components-execution-context.png)_Figure 1_
 
+Execution context uses _Environment Record_ to keep track and maintain the identifier bindings that have been created for the variable declarations and function declaration or for all the values within that context. See the **figure 2** below.
 
-Execution context uses Environment Record to keep track and maintain the identifier bindings that have been created for the variable declarations and function declaration or for all the values within that context.
+![All the components inside the execution context](./environment-record.png)_Figure 2_
 
 ```javascript
 const firstName = "Lydia";
@@ -297,4 +298,4 @@ So function execution context is added to the call stack. So in the first line o
 
 Variable declared using the `var` keyword are initialized with the _undefined_ during the Creation Phase. That variable resides inside the Global Object if it is declared in the global scope as oppose to Variable declared using let and const keyword which resides inside the _Declarative Record_ of the Global Environment Record.
 
-The scope chain refers to mechanism made available through the _Outer Env_ property of the Environment Record_ so whenever we try to access a property that is not inside the current context environment record the engine will traverse the chain of environments of the scope chain until it finds the binding.
+The scope chain refers to mechanism made available through the _Outer Env_ property of the Environment Record\_ so whenever we try to access a property that is not inside the current context environment record the engine will traverse the chain of environments of the scope chain until it finds the binding.
