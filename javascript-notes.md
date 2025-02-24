@@ -232,7 +232,7 @@ So Realm points to a realm record and realm is essentially an isolated Environme
 
 Global Objects which contains several types of properties - **Spec Properties**, **Host Properties** and **User Properties**. We can set user properties implicitly or explicitly. We happen to set user properties on global object implicitly whenever we declare either a function on the global space or variables using the `var` keyword also on the global scope.
 
-### Environment Record
+### Global Environment Record
 
 Global Environment Record manages the identifier bindings within that context and in the case of Global Environment Record these values are accessible throughout the entire script.
 
@@ -262,9 +262,13 @@ This points to the Environment records that store the bindings for the variable 
 
 ## Creation Phase
 
-So when it parse the code it encounters the variable `firstName` which is declared with the const keyword so it uses the Lexical Environment of the Execution Context and this in turns points to _Global Environment Record_ and this again uses the _declarative record_ to handle the identifier bindings created using the const keywords. Variables declared using const or let are un-initialized and memory is set up, they are hoisted but they don't have a value yet. They are only initialized during the Execution Phase of the Execution Context. Same happens in the case of variable `lastName`
+So when it parse the code it encounters the variable `firstName` which is declared with the const keyword so it uses the Lexical Environment of the Execution Context and this in turns points to _Global Environment Record_ and this again uses the _declarative record_ to handle the identifier bindings created using the const keywords. Variables declared using const or let are un-initialized and memory is set up, they are hoisted but they don't have a value yet. They are only initialized during the Execution Phase of the Execution Context. Same happens in the case of variable `lastName`. See the **figure 4**.
 
-Now we comes to the line where function greet() is declared. Function declarations are managed by the _ObjectRecord_ and in contrast to the two previous variables, functions are intialized during the Creation Phase, so a new _Function Object_ is created for the function greet. It contains many properties, two of which are the **Environment** which points to the Environment Record in which the function was declared so in this case it is the _Global Environment Record_ and second is **Call** which is a method and is called whenever we invoke the function.
+![creation phase](./creation-phase-1.png)
+
+Now we comes to the line where function greet() is declared. Function declarations are managed by the _ObjectRecord_ and in contrast to the two previous variables, Functions are initialized during the Creation Phase, so a new _Function Object_ (see the **figure 5**) is created for the function greet. It contains many properties, two of which are the **Environment** which points to the Environment Record in which the function was declared so in this case it is the _Global Environment Record_ and second is **Call** which is a method and is called whenever we invoke the function.
+
+![fuction object](./function-object.png)
 
 ## Execution Phase
 
