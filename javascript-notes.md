@@ -272,9 +272,13 @@ Now we comes to the line where function greet() is declared. Function declaratio
 
 ## Execution Phase
 
-Global Execution Context is added to the call stack. So first line in the code is firstName which contains the value `Lydia` and it gets initialized with that value to the firstName variable same happens in the second line to the lastName variable.
+Global Execution Context is added to the call stack. So first line in the code is firstName which contains the value `Lydia` and it gets initialized with that value to the firstName variable same happens in the second line to the lastName variable. See the **figure 6**.
 
-Then we come to the greet() function and it already initialized in the memory so nothing happens. Then in the next line 9, we invoke that function so the call() on the Function Object is called and this in turn creates a new _Function Execution Context_.
+![execution phase](./execution-phase-1.png)
+
+Then we come to the greet() function and it already initialized in the memory so nothing happens. Then in the next line 9, we invoke that function so the call() on the Function Object is called (see the **figure 7**) and this in turn creates a new _Function Execution Context_.
+
+![call method of the function is invoked](./fuction-object-2.png)
 
 ## Creation Phase of the Function Execution Context
 
